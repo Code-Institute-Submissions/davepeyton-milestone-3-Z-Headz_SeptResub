@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+   <h2>{{ page_title }}</h2>
+   
+    <p>
+       The BMW Z models are a line of roadsters manufactured by German automaker BMW.The Z stands for zukunft (German for future),
+[1]
+and has been produced in four different series with six generations consisting of roadster,
+coupé,
+sports car,
+and concept variants.The introduction of the M Coupé
+and M Roadster in the Z3 line marked the first of the Z series to have a high - performance BMW M variant.The first generation Z4 also continued to offer M Coupé
+and M Roadster variants.The current Z4 (G29) uses BMW 's (B58B30) inline-six, its platform is the basis for the current Toyota Supra.[2]
+    </p>
+
+    {% for car in cars %}
+
+        <div class="row featurette">
+
+            {% if loop.index % 2 != 0 %} <!--displays text on left & img or right if odd index numb-->
+
+                <div class="col-md-7">
+                    <h3><a href="/about/{{ car.url }}">{{ loop.index }}. {{ car.name }}</a></h3>
+                    <p>{{ car.description }}</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="{{ car.image_source }}" alt="" class="featurette-image image-responsive">
+                </div>
+            
+            {% else %} <!--displays img on left & text or right if even index numb-->
+
+                <div class="col-md-5">
+                    <img src="{{ car.image_source }}" alt="" class="featurette-image image-responsive">
+                </div>
+                <div class="col-md-7">
+                    <h3><a href="/about/{{ car.url }}">{{ loop.index }}. {{ car.name }}</a></h3>
+                    <p>{{ car.description }}</p>
+                </div>
+
+            {% endif %}
+
+        </div>
+
+        {% if loop.index != loop.length %} <!--show the hr divider-->
+
+            <hr class="featurette-divider">
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}
