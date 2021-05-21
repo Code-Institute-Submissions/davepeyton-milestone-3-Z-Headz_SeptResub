@@ -9,6 +9,7 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 db = MongoEngine()
+db.init_app(app)
 app.secret_key = os.environ.get("SECRET_KEY")
 
 
