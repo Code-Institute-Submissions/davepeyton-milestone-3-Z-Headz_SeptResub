@@ -1,7 +1,9 @@
 import os
 import json
+from flask import (
+    Flask, flash, render_template,
+    redirect, request, session, url_for)
 from flask_mongoengine import MongoEngine
-from flask import Flask, render_template, request, flash
 if os.path.exists("env.py"):
     import env
 
@@ -62,6 +64,8 @@ def logout():
 
 @app.route("/addcar")
 def addcar():
+    if request.method == 'POST':
+        from Ipython import embed; embed()
     return render_template("addcar.html", page_title="Add Car")
 
 
