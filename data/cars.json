@@ -1,0 +1,43 @@
+[{
+        "name": "Z1",
+        "description": "The BMW Z1 is the first model in BMW's line of Z series roadsters (two-seater convertibles), and was produced in limited numbers from 1989 to 1991. The Z1 is unique for its plastic body panels and vertically sliding doors which drop into the door sills. It is one of the first BMWs to use a multi-link rear suspension. The sole drivetrain specification is the 2.5-litre straight-six engine and 5-speed manual transmission from the E30 325i. In 1996, the Z1's successor, the mass-produced Z3, began production.",
+        "image_source": "https://images.honestjohn.co.uk/imagecache/file/crop/1200x800/media/5680943/BMW~Z1~(1).jpg",
+        "url": "z1"
+    },
+    {
+        "name": "Z3 Roadster",
+        "description": "The BMW Z3 is a range of two-seater sports cars which was produced from 1995 to 2002. The body styles of the range are: 2-door roadster (E36/7 model code) 2-door coupé (E36/8 model code) The Z3 was based on the E36 3 Series platform,[1] while using the rear semi-trailing arm suspension design of the older E30 3 Series. It is the first mass-produced Z Series car. Z3M models were introduced in 1998 in roadster and coupé body styles and were powered by the S50, S52, or S54 straight-six engine depending on country and model year. The Z3M models came with a 5-speed manual transmission. Production ended on June 28, 2002,[2] with the Z3 line replaced by the E85 Z4.",
+        "image_source": "https://media.autoexpress.co.uk/image/private/s--KdTF3PWD--/v1562246978/autoexpress/2018/10/bmw_z3_1_0.jpg",
+        "url": "roadster"
+    },
+    {
+        "name": "Z3 coupe",
+        "description": "The BMW Z3 is a range of two-seater sports cars which was produced from 1995 to 2002. The body styles of the range are: 2-door roadster (E36/7 model code)2-door coupé (E36/8 model code)The Z3 was based on the E36 3 Series platform,[1] while using the rear semi-trailing arm suspension design of the older E30 3 Series. It is the first mass-produced Z Series car.Z3M models were introduced in 1998 in roadster and coupé body styles and were powered by the S50, S52, or S54 straight-six engine depending on country and model year. The Z3M models came with a 5-speed manual transmission.Production ended on June 28, 2002,[2] with the Z3 line replaced by the E85 Z4.",
+        "image_source": "https://www.mad4wheels.com/img/free-car-images/mobile/246/bmw-z3-coupe-1999-482760.jpg",
+        "url": "coupe"
+    },
+    {
+        "name": "Z4 E85",
+        "description": "The first generation of the BMW Z4 consists of the BMW E85 (roadster version) and BMW E86 (coupe version) sports cars. The E85/E86 generation was produced from 2002 to 2008.The E85/E86 replaced the Z3 and is the third model in the BMW Z Series. Initial models were in the roadster (E85) body style, with the coupé (E86) body style being added in 2006.As per the Z3, the E85/E86 was manufactured solely in Greer, South Carolina.The M model - the Z4 M - is powered by the S54 straight-six engine.In February 2009, the BMW Z4 (E89) began production as the successor to the E85/E86.",
+        "image_source": "https://automobile-spec.com/cars/bmw-1020.jpeg",
+        "url": "e85"
+    },
+    {
+        "name": "Z4 E86",
+        "description": "The first generation of the BMW Z4 consists of the BMW E85 (roadster version) and BMW E86 (coupe version) sports cars. The E85/E86 generation was produced from 2002 to 2008. The E85/E86 replaced the Z3 and is the third model in the BMW Z Series. ... The M model - the Z4 M - is powered by the S54 straight-six engine.Engine: Petrol: 2.0 L N46 I4; 2.2–3.2 L M54/N5...Transmission: 5-speed manual; 6-speed manu...Length: 4,090 mm (161.0 in)",
+        "image_source": "http://www.bmwmregistry.com//images/E85MRoadsterexterior.jpg",
+        "url": "e86"
+    },
+    {
+        "name": "Z4 E89",
+        "description": "The BMW Z4 (E89) is the second generation of the BMW Z4 range of two-door roadsters, and was produced from 2009 to 2016. ... The E89 Z4 was the first Z Series model to use a retractable hardtop roof, which meant that there were no longer separate roadster and coupé versions of the car.Engine: 2.0 L N20 I4 turbo; 2.5 – 3.0 L N52 I6; ...Transmission: 6-speed manual; 6-speed auto...Kerb weight: 1,420–1,525 kg (3,131–3,362 lb)",
+        "image_source": "https://www.mad4wheels.com/img/free-car-images/mobile/5684/bmw-z4-e89-sdrive35is-roadster-mille-miglia-limited-edition-2010-281633.jpg",
+        "url": "e89"
+    },
+    {
+        "name": "Z4 G29",
+        "description": "The BMW Z4 (G29) is a two-door roadster produced by German automobile manufacturer BMW. It was introduced in 2018 as a successor to the E89 Z4. As a fifth ...Engine: 2.0 L B48 turbocharged I4; 3.0 L B58 t... Transmission: 8-speed ZF 8HP45 automatic; 6... Curb weight: 1,405–1,535 kg (3,097–3,384 lb)Platform: BMW CLAR",
+        "image_source": "https://a.d-cd.net/7YAAAgGktuA-960.jpg",
+        "url": "g29"
+    }
+]
