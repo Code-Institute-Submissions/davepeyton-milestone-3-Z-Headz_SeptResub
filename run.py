@@ -12,9 +12,12 @@ if os.path.exists("env.py"):
 
 
 app = Flask(__name__)
-db = MongoEngine()
-db.init_app(app)
+
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+
+mongo = PyMongo(app)
 
 
 @app.route("/")
@@ -39,6 +42,13 @@ def about_car(car_name):
             if obj["url"] == car_name:
                 car = obj
     return render_template("car.html", car=car)
+
+
+@app.route("/")
+@app.route("/get_tasks")
+def get_tasks():
+    tasks = mongo.db.tasks.find()
+    return render_template("tasks.html", tasks=tasks)
 
 
 @app.route("/contact", methods=["GET", "POST"])
