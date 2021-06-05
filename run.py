@@ -43,14 +43,14 @@ def about_car(car_name):
                 car = obj
     return render_template("car.html", car=car)
 
-# Tasks
+
 @app.route("/")
 @app.route("/get_tasks")
 def get_tasks():
     tasks = mongo.db.tasks.find()
     return render_template("tasks.html", tasks=tasks)
 
-# Contact
+
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
@@ -58,7 +58,7 @@ def contact():
             request.form.get("name")))
     return render_template("contact.html", page_title="Contact")
 
-# Register
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -81,8 +81,6 @@ def register():
         flash("Registration Successful!")
     return render_template("register.html")
 
-
-# LOGIN
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
