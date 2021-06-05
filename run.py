@@ -59,9 +59,10 @@ def contact():
     return render_template("contact.html", page_title="Contact")
 
 
-@app.route("/signup")
-def signup():
-    return render_template("signup.html", page_title="signup")
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
+
 
 
 @app.route("/login")
