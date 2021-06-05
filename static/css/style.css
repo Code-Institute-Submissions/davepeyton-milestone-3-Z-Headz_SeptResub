@@ -8,6 +8,14 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.navbar-toggler {
+    color: white;
+}
+
+.navbar-toggler-right {
+    color: white;
+}
+
 .form-control {
     height: 41px;
     background: #f2f2f2;
