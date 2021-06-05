@@ -41,6 +41,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('addcar') }}">Add Car</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('get_tasks') }}">New Task</a>
+                    </li>
                     
                     <li class="nav-item"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
 
@@ -163,6 +167,7 @@
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>
