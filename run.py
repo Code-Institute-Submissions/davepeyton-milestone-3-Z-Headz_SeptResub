@@ -44,12 +44,6 @@ def about_car(car_name):
     return render_template("car.html", car=car)
 
 
-@app.route("/")
-@app.route("/get_tasks")
-def get_tasks():
-    tasks = list(mongo.db.tasks.find())
-    return render_template("tasks.html", tasks=tasks)
-
 
 @app.route("/addcar", methods=["GET", "POST"])
 def addcar():
