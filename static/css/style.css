@@ -8,6 +8,24 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+video {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 50%;
+    object-fit: contain;
+    z-index: -1;
+}
+
+
+
 .navbar-toggler {
     color: white;
 }
