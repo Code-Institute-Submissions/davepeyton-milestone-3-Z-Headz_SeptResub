@@ -317,13 +317,11 @@ echo web: python app.py > Procfile
 2. The code for the autoplay function for the carousel was found on [here](https://www.youtube.com/watch?v=I-roimeoeXM).
 3. The code for the alerts shown to the user after signing up for the newletter was found on [sweetalert2](https://sweetalert2.github.io/).
 4. Code was used from [Materialize](https://materializecss.com/) throughout this site, in particular for some buttons, colours, forms, reponsiveness and the modal.
-5. Code was also used and modified from the [Code Institute's](https://codeinstitute.net/) mini project.
+
 
 ### Content
 
 - The content for zheadz can be found on []() and []().
 ## <a name="acknowledgements">Acknowledgements</a>
 
-- I would like to thank mentor  for all his invaluable advice during my three mentor sessions.
-- I would also like to thank the turors at Code Institute.
 
