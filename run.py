@@ -63,7 +63,7 @@ def addcar():
     return render_template("addcar.html", car=cars)
 
 
-@app.route("/addcar/<addcar_id>/edit", methods=["GET", "POST"])
+@app.route("/addcar/addcar_id/edit", methods=["GET", "POST"])
 def edit_car(car_id):
     if request.method == "POST":
         submit = {
@@ -82,7 +82,7 @@ def edit_car(car_id):
         "edit_car.html", car=cars)
 
 
-@app.route("/addcar/<car_id>/delete")
+@app.route("/addcar/car_id/delete")
 def delete_car(car_id):
     mongo.db.cars.remove({"_id": ObjectId(car_id)})
     flash("Car Successfully Deleted")
