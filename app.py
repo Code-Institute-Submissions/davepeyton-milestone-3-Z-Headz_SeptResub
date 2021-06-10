@@ -1,3 +1,4 @@
+
 import os
 import json
 from flask import (
@@ -41,7 +42,7 @@ def about_car(car_name):
         for obj in data:
             if obj["url"] == car_name:
                 car = obj
-    return render_template("car.html", car=car)
+    return render_template("about.html", car=car)
 
 
 
@@ -56,11 +57,11 @@ def addcar():
             "car_image": request.form.get("car_image"),
             "created_by": session["user"]
         }
-        mongo.db.car.insert_one(car)
+        mongo.db.cars.insert_one(car)
         flash("Car Successfully Added")
         return redirect(url_for("addcar"))
-    cars = mongo.db.car_cat.find().sort("car_name", 1)
-    return render_template("addcar.html", car=cars)
+    car = mongo.db.cars.find().sort("car_name", 1)
+    return render_template("addcar.html")
 
 
 @app.route("/addcar/addcar_id/edit", methods=["GET", "POST"])
@@ -74,12 +75,12 @@ def edit_car(car_id):
             "car_image": request.form.get("car_image"),
             "created_by": session["user"]
         }
-        mongo.db.car.update({"_id": ObjectId(car_id)}, submit)
+        mongo.db.cars.update({"_id": ObjectId(car_id)}, submit)
         flash("Car Successfully Updated")
     cars = mongo.db.cars.find_one({"_id": ObjectId(car_id)})
-    cars = mongo.db.car_cat.find().sort("car_name", 1)
+    cars = mongo.db.cars.find().sort("car_name", 1)
     return render_template(
-        "edit_car.html", car=cars)
+        "edit_car.html", car=car)
 
 
 @app.route("/addcar/car_id/delete")
