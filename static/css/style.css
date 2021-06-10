@@ -133,4 +133,22 @@ video {
 
 .flashes h4 {
     line-height: 2;
+    align-items: center;
+
+}
+
+.flashes {
+    color: red;
+    padding-left: 135px;
+    align-items: center;
+}
+
+.container {
+    padding-right: 100px;
+    align-items: center;
+}
+
+.footer-container {
+    opacity: 0;
+    padding-left:150px;
 }
