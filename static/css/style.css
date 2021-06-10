@@ -138,7 +138,9 @@ video {
 }
 
 .flashes {
-    color: red;
+    font-size: 14px;
+    font-weight: lighter;
+    color: rgb(233, 248, 252);
     display: flex;
     align-items: center;
     justify-content: center;
