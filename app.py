@@ -68,7 +68,7 @@ def addcar():
 
 
     cars = mongo.db.cars.find().sort("car_name", 1)
-    return render_template("about.html", cars=cars)
+    return render_template("addcar.html", cars=cars)
 
 
 @app.route("/addcar/addcar_id/edit", methods=["GET", "POST"])
