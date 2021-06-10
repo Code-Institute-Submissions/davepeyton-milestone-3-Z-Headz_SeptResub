@@ -34,6 +34,11 @@ def about():
     return render_template("about.html", page_title="About", cars=data)
 
 
+@app.route("/cars")
+def cars():
+    return render_template("cars.html")
+
+
 @app.route("/about/<car_name>")
 def about_car(car_name):
     car = {}
@@ -49,7 +54,7 @@ def about_car(car_name):
 @app.route("/addcar", methods=["GET", "POST"])
 def addcar():
     if request.method == "POST":
-        car = {
+        cars = { 
             "car_name": request.form.get("car_name"),
             "car_country": request.form.get("car_country"),
             "car_description": request.form.get("car_description"),
@@ -57,11 +62,13 @@ def addcar():
             "car_image": request.form.get("car_image"),
             "created_by": session["user"]
         }
-        mongo.db.cars.insert_one(car)
+        mongo.db.cars.insert_one(cars)
         flash("Car Successfully Added")
         return redirect(url_for("addcar"))
-    car = mongo.db.cars.find().sort("car_name", 1)
-    return render_template("addcar.html")
+
+
+    cars = mongo.db.cars.find().sort("car_name", 1)
+    return render_template("about.html", cars=cars)
 
 
 @app.route("/addcar/addcar_id/edit", methods=["GET", "POST"])
