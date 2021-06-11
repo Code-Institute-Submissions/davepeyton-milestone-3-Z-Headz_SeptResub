@@ -26,6 +26,13 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/")
+@app.route("/get_cars")
+def get_cars():
+    cars = list(mongo.db.cars.find())
+    return render_template("cars.html", cars=cars)
+
+
 @app.route("/about")
 def about():
     data = []
@@ -64,7 +71,7 @@ def addcar():
         }
         mongo.db.cars.insert_one(cars)
         flash("Car Successfully Added")
-        return redirect(url_for("addcar"))
+        return redirect(url_for("cars"))
 
 
     cars = mongo.db.cars.find().sort("car_name", 1)
