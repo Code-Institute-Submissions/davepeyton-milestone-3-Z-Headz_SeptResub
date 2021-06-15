@@ -1,15 +1,14 @@
-/*
+
     jQuery for MaterializeCSS initialization
-*/
 
 
 $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
     $(".collapsible").collapsible();
     $(".tooltipped").tooltip();
-    $("select").formSelect();
-    $('.modal').modal();
-    $('.datepicker').datepicker({
+    $(".modal").modal();
+    $('select').formSelect();
+    $(".datepicker").datepicker({
         format: "dd mmmm, yyyy",
         yearRange: 3,
         showClearBtn: true,
@@ -18,7 +17,7 @@ $(document).ready(function () {
         }
     });
 
-    /*validateMaterializeSelect();
+    validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
         let classInvalid = { "border-bottom": "1px solid #f44336", "box-shadow": "0 1px 0 0 #f44336" };
@@ -48,13 +47,13 @@ $(document).ready(function () {
 });
 
 
-/*
-    vanilla JavaScript for MaterializeCSS initialization
-*/
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     let sidenavs = document.querySelectorAll(".sidenav");
-//     let sidenavsInstance = M.Sidenav.init(sidenavs, {edge: "right"});
-//     let collapsibles = document.querySelectorAll(".collapsible");
-//     let collapsiblesInstance = M.Collapsible.init(collapsibles);
-// });
+    vanilla JavaScript for MaterializeCSS initialization
+
+
+ document.addEventListener('DOMContentLoaded', function () {
+     let sidenavs = document.querySelectorAll(".sidenav");
+     let sidenavsInstance = M.Sidenav.init(sidenavs, {edge: "right"});
+     let collapsibles = document.querySelectorAll(".collapsible");
+     let collapsiblesInstance = M.Collapsible.init(collapsibles);
+ });

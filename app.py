@@ -57,54 +57,6 @@ def about_car(car_name):
     return render_template("about.html", car=car)
 
 
-
-@app.route("/addcar", methods=["GET", "POST"])
-def addcar():
-    if request.method == "POST":
-        cars = { 
-            "car_name": request.form.get("car_name"),
-            "car_country": request.form.get("car_country"),
-            "car_description": request.form.get("car_description"),
-            "date": request.form.get("date"),
-            "car_image": request.form.get("car_image"),
-            "created_by": session["user"]
-        }
-        mongo.db.cars.insert_one(cars)
-        flash("Car Successfully Added")
-        return redirect(url_for("cars"))
-
-
-    cars = mongo.db.cars.find().sort("car_name", 1)
-    return render_template("addcar.html", cars=cars)
-
-
-@app.route("/addcar/addcar_id/edit", methods=["GET", "POST"])
-def edit_car(car_id):
-    if request.method == "POST":
-        submit = {
-            "car_name": request.form.get("car_name"),
-            "car_country": request.form.get("car_country"),
-            "car_description": request.form.get("car_description"),
-            "date": request.form.get("date"),
-            "car_image": request.form.get("car_image"),
-            "created_by": session["user"]
-        }
-        mongo.db.cars.update({"_id": ObjectId(car_id)}, submit)
-        flash("Car Successfully Updated")
-    cars = mongo.db.cars.find_one({"_id": ObjectId(car_id)})
-    cars = mongo.db.cars.find().sort("car_name", 1)
-    return render_template(
-        "edit_car.html", car=car)
-
-
-@app.route("/addcar/car_id/delete")
-def delete_car(car_id):
-    mongo.db.cars.remove({"_id": ObjectId(car_id)})
-    flash("Car Successfully Deleted")
-    return redirect(url_for("addcar"))
-
-
-
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
@@ -186,6 +138,11 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
     
+
+@app.route("/add_car")
+def add_car():
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_car.html", categories=categories)
 
 
 if __name__ == "__main__":
