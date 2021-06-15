@@ -137,6 +137,15 @@ video {
 
 }
 
+.btn-small {
+    margin: 5px;
+}
+
+.collapsible-header .col strong {
+    margin: 5px;
+    line-height: 42px;
+}
+
 .flashes {
     font-size: 14px;
     font-weight: lighter;
