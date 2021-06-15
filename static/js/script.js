@@ -6,7 +6,7 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $(".datepicker").datepicker({
         format: "dd mmmm, yyyy",
-        yearRange: 3,
+        yearRange: 50,
         showClearBtn: true,
         i18n: {
             done: "Select"
