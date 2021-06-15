@@ -101,7 +101,7 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
+                        flash("Welcome Back, {}".format(
                             request.form.get("username")))
                         return redirect(url_for(
                             "profile", username=session["user"]))
@@ -141,12 +141,11 @@ def logout():
 @app.route("/add_car", methods=["GET", "POST"])
 def add_car():
     if request.method == "POST":
-        is_urgent = "on" if request.form.get("is_urgent") else "off"
+       
         car = {
             "category_name": request.form.get("category_name"),
             "car_name": request.form.get("car_name"),
             "car_description": request.form.get("car_description"),
-            "is_urgent": is_urgent,
             "date": request.form.get("date"),
             "created_by": session["user"]
         }

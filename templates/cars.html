@@ -1,12 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for car in cars %}
-        {{ car.car_name }}<br>
-        {{ car.category_name }}<br>
-        {{ car.car_description }}<br>
-        {{ car.car_year }}<br>
-        {{ car.car_date }}<br>
-    {% endfor %}
+    <ul class="collapsible">
+        {% for car in cars %}
+        <li>
+            <div class="collapsible-header white-text light-blue darken-4 text-shadow">
+                <i class="fas fa-caret-down"></i>
+                <strong>{{ car.car_name }}</strong> : {{ car.car_date }}
+                {% if car.is_urgent == "on" %}
+                    <i class="fas fa-exclamation-circle light-blue-text text-lighten-2 tooltipped"
+                        data-position="right" data-tooltip="URGENT!"></i>
+                {% endif %}
+            </div>
+            <div class="collapsible-body">
+                <strong>{{ car.category_name }}</strong>
+                <p>{{ car.car_description }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 
 {% endblock %}

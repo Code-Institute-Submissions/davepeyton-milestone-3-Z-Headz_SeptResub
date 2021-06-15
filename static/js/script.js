@@ -1,13 +1,9 @@
-
-    jQuery for MaterializeCSS initialization
-
-
 $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
-    $(".collapsible").collapsible();
     $(".tooltipped").tooltip();
     $(".modal").modal();
     $('select').formSelect();
+    $('.collapsible').collapsible();
     $(".datepicker").datepicker({
         format: "dd mmmm, yyyy",
         yearRange: 3,
@@ -45,11 +41,6 @@ $(document).ready(function () {
         });
     }
 });
-
-
-
-    vanilla JavaScript for MaterializeCSS initialization
-
 
  document.addEventListener('DOMContentLoaded', function () {
      let sidenavs = document.querySelectorAll(".sidenav");
