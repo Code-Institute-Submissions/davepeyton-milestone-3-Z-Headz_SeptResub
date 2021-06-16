@@ -32,6 +32,13 @@ def get_cars():
     return render_template("cars.html", cars=cars)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    cars = list(mongo.db.cars.find({"$text": {"$search": query}}))
+    return render_template("cars.html", cars=cars)
+
+
 @app.route("/about")
 def about():
     data = []
