@@ -1,109 +1,97 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-blue-text text-darken-4 center-align">Add Car</h3>
+    <h3 class="black-text center-align">Add Car</h3>
 
-    <div class="row card-panel grey lighten-5">
+    <div class="row card-panel greay lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('add_car') }}">
-            <!-- category selection -->
-			<div class="row">
-				<div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-					<select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Choose Category</option>
-                        {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endfor %}
-                    </select>
-					<label for="category_name">Car Category</label>
-				</div>
-			</div>
-            <!-- Car Model -->
+            <!--car Category-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-folder-open prefix light-blue-text accent-3"></i>
+                        <select id="category_name" name="category_name" class="validate" required>
+                            <option value="" disabled selected>Choose Category</option>
+                            {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endfor %}
+                        </select>
+                            <label for="category_name">Car Category</label>
+                </div>
+            </div>
+            <!-- Car Model  -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix light-blue-text accent-3"></i>
                     <input id="car_model" name="car_model" minlength="5" maxlength="50"
                         type="text" class="validate" required>
                     <label for="car_model">Car Model</label>
                 </div>
             </div>
-
-             <!-- Car Year -->
+              <!-- car color -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-align-left prefix light-blue-text accent-3"></i>
+                    <textarea id="car_color" name="car_color" minlength="5"
+                        maxlength="2000" class="materialize-textarea" required></textarea>
+                    <label for="car_color">Car Color</label>
+                </div>
+            </div>
+              <!-- car year -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix light-blue-text accent-3"></i>
                     <input id="car_year" name="car_year" type="text" class="datepicker validate" required>
                     <label for="car_year">Car Year</label>
                 </div>
             </div>
-
-            <!-- Car Colour -->
+            <!--Car Origen-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="car_colour" name="car_colour" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="car_colour">Car Colour</label>
-                </div>
-            </div>
-           
-        
- <!-- Car Condition -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="car_condition" name="car_condition" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="car_condition">Car Condition</label>
-                </div>
-            </div>
- <!-- Engine Size -->
-           <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="engine_size" name="engine_size" minlength="5" maxlength="50"
+                    <i class="fas fa-globe left prefix light-blue-text accent-3"></i>
+                    <input id="car_origen" name="car_origen" minlength="5" maxlength="50"
                         type="text" class="validate" required>
-                    <label for="engine_size">Engine Size</label>
+                    <label for="car_origen">Country</label>
                 </div>
             </div>
-
-            <!-- is urgent toggle -->
-			<div class="row">
-				<div class="input-field col s12">
-					<div class="switch">
-                        <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
-						<label for="is_urgent">
-                            <input type="checkbox" id="is_urgent" name="is_urgent">
-                            <span class="lever"></span>
-                            Is Urgent
-                        </label>
-					</div>
-				</div>
-            </div>
-            
-             <!-- date picker -->
+            <!-- Car description -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="post_date" name="post_date" type="text" class="datepicker validate" required>
-                    <label for="post_date">Date</label>
+                    <i class="fas fa-align-left prefix light-blue-text accent-3"></i>
+                    <textarea id="car_description" name="car_description" minlength="5"
+                        maxlength="500" class="materialize-textarea" required></textarea>
+                    <label for="car_description">Car Description</label>
                 </div>
             </div>
-
-              <!--Image url-->
+            <!-- car extras -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text accent-3"></i>
+                    <textarea id="car_extras" name="car_extras" minlength="5"
+                        maxlength="2000" class="materialize-textarea" required></textarea>
+                    <label for="car_extras">Car Extras</label>
+                </div>
+            </div>
+            <!-- date picker -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix light-blue-text accent-3"></i>
+                    <input id="date" name="date" type="text" class="datepicker validate" required>
+                    <label for="date">Post Date</label>
+                </div>
+            </div>
+            <!--Image url-->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-image prefix light-blue-text accent-3"></i>
-                     <input id="car_image" name="car_image" type="text" 
+                     <input id="car_image" name="car_image" type="text">
                      <label for="car_image">Share Image URL (Optional)</label>
                 </div>
             </div>
-
-            <!-- submit button -->
+           <!--Submit button-->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Add Car <i class="fas fa-plus-square right"></i>
+                    <button type="submit" class="btn-large grey darken-4 text-shadow">
+                        Add Car <i class="light-blue-text accent-3 fas fa-plus-square right"></i>
                     </button>
                 </div>
             </div>

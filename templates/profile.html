@@ -3,12 +3,30 @@
 
     <div class="row">
         <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
-                <h3 class="center-align light-blue-text text-darken-4">
+            <div class="blue darken-4 card-panel">
+                <h3 class="center-align white-text">
                     {{ username }}'s Profile
                 </h3>
             </div>
+            
         </div>
+    </div>
+
+    <div class="row">
+        {% for car in cars %}
+            <div class="col s12 m4">
+                <div class="card car_card">
+                    <div class="card-image">
+                        <img src="{{ car.car_image }}" onerror="this.src='/static/img/z8.jpg'">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title"><strong>{{ car.car_name }}</strong></span>
+                        <p>{{ car.car_description }}</p>
+                        <a href="{{ url_for('car_details', car_id=car._id) }}">See more</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 
 {% endblock %}
