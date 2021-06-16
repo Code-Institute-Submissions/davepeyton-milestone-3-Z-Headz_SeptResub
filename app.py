@@ -183,6 +183,13 @@ def edit_car(car_id):
     return render_template("edit_car.html", car=car, categories=categories)
 
 
+@app.route("/delete_car/<car_id>")
+def delete_car(car_id):
+    mongo.db.cars.remove({"_id": ObjectId(car_id)})
+    flash("Car Successfully Deleted")
+    return redirect(url_for("get_cars"))
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
