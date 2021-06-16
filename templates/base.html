@@ -41,6 +41,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('get_cars') }}">Cars</a>
                     </li>
+                    
+            {% if session.user|lower == "admin"|lower %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('get_categories') }}">Manage Categories</a>
+                    </li>
+                {% endif %}
                 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('add_car') }}">Add Car</a>
