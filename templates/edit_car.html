@@ -10,9 +10,13 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix light-blue-text accent-3"></i>
                         <select id="category_name" name="category_name" class="validate" required>
-                            <option value="" disabled selected>Choose Category</option>
+                            <option value="">Choose Category</option>
                             {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                               {% if category.category_name == car.category_name %}
+                                  <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                               {% else %}
+                                  <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                               {% endif %}
                             {% endfor %}
                         </select>
                             <label for="category_name">Car Category</label>
@@ -23,7 +27,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix light-blue-text accent-3"></i>
                     <input id="car_model" name="car_model" minlength="5" maxlength="50"
-                        type="text" class="validate" required>
+                        value="{{ car.car_model }}"type="text" class="validate" required>
                     <label for="car_model">Car Model</label>
                 </div>
             </div>
@@ -49,8 +53,8 @@
                 <div class="input-field col s12">
                     <i class="fas fa-globe left prefix light-blue-text accent-3"></i>
                     <input id="car_origen" name="car_origen" minlength="5" maxlength="50"
-                        type="text" class="validate" required>
-                    <label for="car_origen">Country</label>
+                        type="text" value="{{ car.car_origen }}"  class="validate" required>
+                    <label for="car_origen">Origen</label>
                 </div>
             </div>
             <!-- Car description -->
@@ -75,7 +79,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix light-blue-text accent-3"></i>
-                    <input id="date" name="date" type="text" class="datepicker validate" required>
+                    <input id="date" name="date" type="text" 
+                        value="{{ car.car_date }}" class="datepicker validate" required>
                     <label for="date">Post Date</label>
                 </div>
             </div>
@@ -83,13 +88,18 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-image prefix light-blue-text accent-3"></i>
-                     <input id="car_image" name="car_image" type="text">
+                     <input id="car_image" name="car_image" type="text" 
+                         value="{{ car.car_image }}">
                      <label for="car_image">Share Image URL (Optional)</label>
                 </div>
             </div>
            <!--Submit button-->
             <div class="row">
                 <div class="col s12 center-align">
+                       <!-- cancel changes -->
+                     <a href="{{ url_for('get_cars') }}" class="btn-large red text-shadow">
+                        Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
                     <button type="submit" class="btn-large grey darken-4 text-shadow">
                         Edit Car <i class="light-blue-text accent-3 fas fa-edit right"></i>
                     </button>

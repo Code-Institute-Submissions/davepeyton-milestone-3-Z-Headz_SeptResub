@@ -141,25 +141,43 @@ def logout():
 @app.route("/add_car", methods=["GET", "POST"])
 def add_car():
     if request.method == "POST":
-        is_urgent = "on" if request.form.get("is_urgent") else "off"
         car = {
             "category_name": request.form.get("category_name"),
-            "car_name": request.form.get("car_name"),
+            "car_model": request.form.get("car_model"),
+            "car_color": request.form.get("car_color"),
+            "car_year": request.form.get("car_year"),
+            "car_origen": request.form.get("car_origen"),
             "car_description": request.form.get("car_description"),
-            "is_urgent": is_urgent,
-            "date": request.form.get("date"),
+            "car_extras": request.form.get("car_extras"),
+            "post_date": request.form.get("post_date"),
+            "car_image": request.form.get("car_image"),
             "created_by": session["user"]
         }
         mongo.db.cars.insert_one(car)
         flash("Car Successfully Added")
         return redirect(url_for("get_cars"))
-
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_car.html", categories=categories)
 
 
 @app.route("/edit_car/<car_id>", methods=["GET", "POST"])
 def edit_car(car_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "car_model": request.form.get("car_model"),
+            "car_color": request.form.get("car_color"),
+            "car_year": request.form.get("car_year"),
+            "car_origen": request.form.get("car_origen"),
+            "car_description": request.form.get("car_description"),
+            "car_extras": request.form.get("car_extras"),
+            "post_date": request.form.get("post_date"),
+            "car_image": request.form.get("car_image"),
+            "created_by": session["user"]
+        }
+        mongo.db.cars.update({"_id": ObjectId(car_id)}, submit)
+        flash("Car Successfully Updated")
+
     car = mongo.db.cars.find_one({"_id": ObjectId(car_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_car.html", car=car, categories=categories)
