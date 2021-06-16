@@ -7,16 +7,19 @@
                 <div class="col s12 m6 l3">
                     <div class="card">
                         <div class="card-image">
-                            <img src="{{ car.car_image }}" onerror="this.src='/static/img/z8.jpg'">
+                            <img src="{{ recipe.recipe_image }}" onerror="this.src='/static/img/yummy.jpg'">
                         </div>
                     </div>
                 </div>
                 <h5>{{ car.car_name }}</h5>
-               
-                <p><strong><em>Origen: </em></strong> {{ car.car_origen }}</p>
+                <p><strong><em>Car Model: </em></strong> {{ car.category_name }}</p>
+                <p><strong><em>Country: </em></strong> {{ car.car_origen }}</p>
                 <p><strong><em>Posted on: </em></strong> {{ car.date }}</p>
                 <p><em>by: {{ car.created_by }}</em></p>
-                
+                <strong><em>Description:</em></strong>
+                <p>{{ <car class="car_description"></car> }}</p>
+                <strong><em>:</em></strong>
+                <p>{{ <car class="description"></car> }}</p>
                 {% if session.user|lower == car.created_by|lower %}
                     <a href="{{ url_for('edit_car', car_id=car._id) }}" class="btn-small light-blue accent-5">Edit</a>
                     <button data-target="modal1" class="btn-small modal-trigger red accent-4">Delete</button>
@@ -27,7 +30,7 @@
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>Are you sure?</h4>
-            <p>This Car will be deleted from your profile</p>
+            <p>Car will be deleted from your profile</p>
         </div>
         <div class="modal-footer">
             <a href="{{ url_for('delete_car', car_id=car._id) }}" class="modal-close waves-effect waves-blue btn-flat">Yes</a>
