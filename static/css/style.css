@@ -34,8 +34,6 @@ video {
     z-index: -1;
 }
 
-
-
 .navbar-toggler {
     color: white;
 }
@@ -165,7 +163,3 @@ video {
     justify-content: center;
 }
 
-.container {
-    position: relative;
-    align-items: center;
-}
