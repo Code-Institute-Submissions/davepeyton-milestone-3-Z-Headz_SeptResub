@@ -163,3 +163,7 @@ video {
     justify-content: center;
 }
 
+.container {
+    position: relative;
+    align-items: center;
+}
