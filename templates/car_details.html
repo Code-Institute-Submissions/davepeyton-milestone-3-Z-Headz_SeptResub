@@ -13,13 +13,13 @@
                 </div>
                 <h5>{{ car.car_name }}</h5>
                 <p><strong><em>Car Model: </em></strong> {{ car.category_name }}</p>
-                <p><strong><em>Country: </em></strong> {{ car.car_origen }}</p>
-                <p><strong><em>Posted on: </em></strong> {{ car.date }}</p>
+                <p><strong><em>Origen: </em></strong> {{ car.car_origen }}</p>
+                <p><strong><em>Posted on: </em></strong> {{ post.date }}</p>
                 <p><em>by: {{ car.created_by }}</em></p>
                 <strong><em>Description:</em></strong>
-                <p>{{ <car class="car_description"></car> }}</p>
-                <strong><em>:</em></strong>
-                <p>{{ <car class="description"></car> }}</p>
+                <p>{{ car.car_description }}</p>
+                <strong><em>Car Year:</em></strong>
+                <p>{{ car.year }}</p>
                 {% if session.user|lower == car.created_by|lower %}
                     <a href="{{ url_for('edit_car', car_id=car._id) }}" class="btn-small light-blue accent-5">Edit</a>
                     <button data-target="modal1" class="btn-small modal-trigger red accent-4">Delete</button>
