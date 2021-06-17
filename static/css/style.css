@@ -4,7 +4,7 @@
 
 body {
     color: rgb(221, 217, 217);
-    background: #88bbdd;
+    background: #2c4b5f;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -35,11 +35,11 @@ video {
 }
 
 .navbar-toggler {
-    color: white;
+    color: rgb(119, 114, 114);
 }
 
 .navbar-toggler-right {
-    color: white;
+    color: rgb(209, 46, 46);
 }
 
 .form-control {
@@ -122,7 +122,7 @@ video {
 }
 
 .signup-form form a {
-    color: #3598dc;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -157,7 +157,7 @@ video {
 .flashes {
     font-size: 14px;
     font-weight: lighter;
-    color: rgb(233, 248, 252);
+    color: rgb(211, 10, 10);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -165,5 +165,6 @@ video {
 
 .container {
     position: relative;
-    align-items: center;
+    padding-right: 130px;
 }
+
