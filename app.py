@@ -32,6 +32,12 @@ def get_cars():
     return render_template("cars.html", cars=cars)
 
 
+@app.route("/car/<car_id>/view")
+def car_details(car_id):
+    car = mongo.db.cars.find_one({"_id": ObjectId(car_id)})
+    return render_template("car_details.html", car=car)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -125,15 +131,25 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+def is_admin():
+    if session["user"] == 'admin':
+        return True
+    else:
+        return False
+
+
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    print(session["user"])
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
     if session["user"]:
-        return render_template("profile.html", username=username)
 
+        car = list(mongo.db.cars.find({"created_by": username}))
+        return render_template(
+            "profile.html", username=username, cars=car
+            )
     return redirect(url_for("login"))
 
 
