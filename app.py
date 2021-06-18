@@ -169,9 +169,9 @@ def add_car():
             "car_model": request.form.get("car_model"),
             "car_color": request.form.get("car_color"),
             "car_year": request.form.get("car_year"),
-            "car_origen": request.form.get("car_origen"),
+            "car_country": request.form.get("car_country"),
             "car_description": request.form.get("car_description"),
-            "car_extras": request.form.get("car_extras"),
+            "car_mileage": request.form.get("car_mileage"),
             "post_date": request.form.get("post_date"),
             "car_image": request.form.get("car_image"),
             "created_by": session["user"]
@@ -191,9 +191,9 @@ def edit_car(car_id):
             "car_model": request.form.get("car_model"),
             "car_color": request.form.get("car_color"),
             "car_year": request.form.get("car_year"),
-            "car_origen": request.form.get("car_origen"),
+            "car_country": request.form.get("car_country"),
             "car_description": request.form.get("car_description"),
-            "car_extras": request.form.get("car_extras"),
+            "car_mileage": request.form.get("car_mileage"),
             "post_date": request.form.get("post_date"),
             "car_image": request.form.get("car_image"),
             "created_by": session["user"]
