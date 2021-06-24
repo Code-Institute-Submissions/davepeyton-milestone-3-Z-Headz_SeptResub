@@ -305,8 +305,8 @@ echo web: python app.py > Procfile
 ### Code 
 
 1. The code for the carousel is from Materialize and can be found [here](https://materializecss.com/carousel.html).
-2. The code for the autoplay function for the carousel was found on [here](https://www.youtube.com/watch?v=I-roimeoeXM).
-3. The code for the alerts shown to the user after signing up for the newletter was found on [sweetalert2](https://sweetalert2.github.io/).
+2. The code for the autoplay function for the carousel was found on [here](https://www.youtube.com/watch?v=_mu69ROAcsg).
+3. The code for the alerts shown to the user after signing up for the newletter was found on [Materialize](https://materializecss.com/).
 4. Code was used from [Materialize](https://materializecss.com/) throughout this site, in particular for some buttons, colours, forms, reponsiveness and the modal.
 
 
@@ -314,5 +314,6 @@ echo web: python app.py > Procfile
 
 - The content for zheadz can be found on []() and []().
 ## <a name="acknowledgements">Acknowledgements</a>
+Thanks to my mentor Chris for all his help and ideas.
 
 
