@@ -1,7 +1,7 @@
 
 ![devices](https://user-images.githubusercontent.com/76107271/123310044-92e23c00-d51d-11eb-9daf-b1768860d6c4.png)
 
-- [click here to visit Z Headz](https://8080-plum-grouse-qo17jmz4.ws-eu08.gitpod.io/)
+- [click here to visit Z Headz](https://git.heroku.com/zheadz.git)
 
 # UX
 ## Contents
