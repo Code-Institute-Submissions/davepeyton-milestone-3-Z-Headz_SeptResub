@@ -141,7 +141,7 @@ def profile(username):
 
         car = list(mongo.db.cars.find({"created_by": username}))
         return render_template(
-            "profile.html", username=username, cars=car
+            "profile.html", username=username, car=car
             )
     return redirect(url_for("login"))
 
