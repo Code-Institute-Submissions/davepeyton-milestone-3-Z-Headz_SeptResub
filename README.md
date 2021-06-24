@@ -1,4 +1,5 @@
 
+![devices](https://user-images.githubusercontent.com/76107271/123310044-92e23c00-d51d-11eb-9daf-b1768860d6c4.png)
 
 # UX
 ## Contents
