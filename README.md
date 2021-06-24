@@ -70,19 +70,7 @@
 - The user will be able to register for the website.
 - The user will be able to add, edit and delete content. 
 - The user will NOT be able to view the features that are reserved unless they are registered.
-
-
-## <a name="design-choices">Design Choices</a>
-
----
-
-### Fonts
-- I used [Roboto](https://fonts.google.com/specimen/Roboto) for the body and after some deliberation and feeedback from some friends that tested the website I decided to use [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) for all the headings and navbar items.
-
-
-### Colours
  
-
 
 ### Icons
 - The icons that I used in this project were provided by [Font Awesome](https://fontawesome.com/). I decided to use icons as they offer a pleasant visual aide to the site, also users tend to know that icons usually work as buttons.
@@ -90,7 +78,7 @@
 ## <a name="database-model">Database Model</a>
 I used MongoDB's non-relational database for this website,
 
-#### Seeds collection
+#### cars collection
 
 |**Key**|**Type**|
 |:-----|:-----|
