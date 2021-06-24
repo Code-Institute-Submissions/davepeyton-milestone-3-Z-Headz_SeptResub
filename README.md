@@ -1,4 +1,4 @@
-![ipad](https://user-images.githubusercontent.com/76107271/123308265-5ad9f980-d51b-11eb-81a6-c5fd9a8c597e.jpg)
+
 
 # UX
 ## Contents
